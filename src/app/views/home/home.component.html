@@ -1,0 +1,23 @@
+<div class="container">
+    <div
+      infiniteScroll
+      [infiniteScrollDistance]="0"
+      [infiniteScrollThrottle]="50"
+      (scrolled)="onScroll()"
+      [fromRoot]="false"
+    >
+        <div class="news d-flex mt-4" *ngFor="let news of (newsList$ | async)">
+            <div class="img-container p-2">
+                <img [src]="news.image_url" />
+            </div>
+            <div class="content-container p-3">
+                <a class="title" target="_blank" rel="noopener noreferrer" [href]="news.url">
+                    {{ news.title }}
+                </a>
+                <span>
+                    {{ news.description }}
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

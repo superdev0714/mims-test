@@ -1,0 +1,12 @@
+<nav class="navbar fixed-top navbar-expand-lg py-4">
+  <a class="navbar-brand text-success" href="#">MIMS Test</a>
+  <span class="ml-4">
+    {{ newsInfo$ | async }}
+  </span>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    <form class="form-inline my-2 my-lg-0" (ngSubmit)="onSearch()" [formGroup]="searchForm">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" formControlName="search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
